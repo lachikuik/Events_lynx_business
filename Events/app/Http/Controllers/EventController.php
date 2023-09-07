@@ -10,14 +10,10 @@ class EventController extends Controller
 {
     public function index()
     {
-        // PAr pitié si c'est une liste ou un array, appelle les variables avec s à la fin :)
         $events = Event::all();
         return Inertia::render('home', [
             'events'=>$events
         ]);
-
-
-        // return response()->json($event);
     }
 
     public function UpdateEvent(Request $request, $event_id)
